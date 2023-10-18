@@ -3,7 +3,7 @@ import { StyleSheet, View, Image, Text, TouchableOpacity, ScrollView } from 'rea
 import colors from '../configs/colors'
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons'
-import tailwind from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 import { Foundation } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import RestaurantMap from '../components/RestaurantMap'
@@ -20,7 +20,7 @@ const DetailsScreen = ({ route, navigation }) => {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={tailwind`absolute top-9 left-4 z-30 w-9 h-9 rounded-full bg-white justify-center items-center shadow`} onPress={() => navigation.goBack()}>
+            <TouchableOpacity style={tw`absolute top-9 left-4 z-30 w-9 h-9 rounded-full bg-white justify-center items-center shadow`} onPress={() => navigation.goBack()}>
                 <Ionicons name="arrow-back" size={18} color={colors.black} />
             </TouchableOpacity>
             <View style={styles.mapImageWrpper}>
@@ -31,7 +31,7 @@ const DetailsScreen = ({ route, navigation }) => {
                 )}
             </View>
 
-            <ScrollView showsVerticalScrollIndicator={false} style={tailwind`z-20`}>
+            <ScrollView showsVerticalScrollIndicator={false} style={tw`z-20`}>
                 <View style={styles.content}>
                     <View style={styles.header}>
                         <Text style={styles.title}>{name}</Text>
@@ -55,10 +55,10 @@ const DetailsScreen = ({ route, navigation }) => {
                             </View>
                         </View>
                     </View>
-                    <View style={tailwind`mt-3`}>
-                        <Text style={[tailwind`text-gray-800 font-bold border-b w-1/3 mb-2 pb-1`, { borderBottomColor: colors.primary, fontSize: 17 }]}>Categories</Text>
+                    <View style={tw`mt-3`}>
+                        <Text style={[tw`text-gray-800 font-bold border-b w-1/3 mb-2 pb-1`, { borderBottomColor: colors.primary, fontSize: 17 }]}>Categories</Text>
                         {categories.map(({ title }, index) => (
-                            <Text key={index} style={tailwind`text-xs text-gray-700`}><Text style={{ color: colors.primary }}>•</Text> {title}</Text>
+                            <Text key={index} style={tw`text-xs text-gray-700`}><Text style={{ color: colors.primary }}>•</Text> {title}</Text>
                         ))}
                     </View>
                     {/* MenuItems */}

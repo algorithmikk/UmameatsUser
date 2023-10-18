@@ -5,13 +5,13 @@ import PaymentScreen from '../components/PaymentScreen';
 import { STRIPE_API_URL } from '../configs/apiEndpoints';
 import colors from '../configs/colors';
 import PaymentButton from '../components/PaymentButton';
-import tailwind from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 import AppHead from '../components/AppHead';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/core';
 import { selectUser } from '../redux/slices/authSlice';
 import { selectCartItems, updateBusket } from '../redux/slices/basketSlice';
-import { db, timestamp } from '../configs/firebase';
+import { db,timestamp } from '../configs/firebase';
 
 const CheckoutScreen = () => {
   const {
@@ -143,16 +143,16 @@ const CheckoutScreen = () => {
   return (
     <>
       {loadingOrder ? (
-        <View style={tailwind`h-full bg-white items-center justify-center`}>
-          <Text style={tailwind`font-bold text-lg w-3/4 text-center`}>{"Congratulations!\nPayment successfully done!"}</Text>
-          <Text style={tailwind`mt-4`}>Creating your order. please wait...</Text>
-          <Image source={require('../assets/images/loaging.gif')} style={tailwind`w-72 h-72`} />
+        <View style={tw`h-full bg-white items-center justify-center`}>
+          <Text style={tw`font-bold text-lg w-3/4 text-center`}>{"Congratulations!\nPayment successfully done!"}</Text>
+          <Text style={tw`mt-4`}>Creating your order. please wait...</Text>
+          <Image source={require('../assets/images/loaging.gif')} style={tw`w-72 h-72`} />
         </View>
       ) : (
         <>
           <PaymentScreen>
             <AppHead title={`Checkout`} />
-            <View style={tailwind`mt-5`}>
+            <View style={tw`mt-5`}>
               <PaymentButton
                 variant="primary"
                 loading={loading}

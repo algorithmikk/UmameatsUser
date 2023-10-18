@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import MapView, { Marker } from 'react-native-maps'
-import tailwind from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 
 const RestaurantMap = ({ coordinates, title }) => {
     const mapRef = useRef(null)
 
     return (
-        <View style={[tailwind`bg-blue-300 relative `, { height: 250 }]}>
+        <View style={[tw`bg-blue-300 relative `, { height: 250 }]}>
             <MapView
                 initialRegion={{
                     ...coordinates,
@@ -15,7 +15,7 @@ const RestaurantMap = ({ coordinates, title }) => {
                     longitudeDelta: 0.005,
                 }}
                 ref={mapRef}
-                style={tailwind`h-full z-10`}
+                style={tw`h-full z-10`}
             >
                 {coordinates && (
                     <Marker

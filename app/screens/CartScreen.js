@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, Modal } from 'react-native';
 import Screen from '../components/Screen'
-import tailwind from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 import AppHead from '../components/AppHead';
 import AppButton from '../components/AppButton'
 import { selectTotalItems, selectTotalPrice } from '../redux/slices/basketSlice';
@@ -16,13 +16,13 @@ const CartScreen = () => {
     const [modalVisible, setModalVisible] = useState(false)
 
     return (
-        <Screen style={tailwind`flex-1 bg-white`}>
+        <Screen style={tw`flex-1 bg-white`}>
             <AppHead title={`Your cart (${getAllItems.length})`} icon="basket-outline" />
-            <View style={tailwind`flex-1`}>
+            <View style={tw`flex-1`}>
                 <CartItems />
             </View>
             {!!getAllItems.length && (
-                <View style={tailwind`flex-row items-center px-5 pb-5`}>
+                <View style={tw`flex-row items-center px-5 pb-5`}>
                     <View style={styles.left}>
                         <Text style={styles.total}>Total</Text>
                         <Text style={styles.totalAmount}>${totalPrice}</Text>

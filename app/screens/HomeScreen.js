@@ -5,7 +5,7 @@ import Screen from '../components/Screen'
 import Categories from '../components/Categories'
 import SearchBar from '../components/SearchBar'
 import RestaurantItem from '../components/RestaurantItem'
-import tailwind from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 import { localRestaurants } from '../data/localRestaurants';
 import colors from '../configs/colors'
 
@@ -46,12 +46,12 @@ const HomeScreen = () => {
 
 
     return (
-        <Screen style={tailwind`bg-white flex-1`}>
+        <Screen style={tw`bg-white flex-1`}>
             <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
             <SearchBar setCity={setCity} city={city} />
-            <ScrollView style={tailwind`flex-1`} showsVerticalScrollIndicator={false}>
+            <ScrollView style={tw`flex-1`} showsVerticalScrollIndicator={false}>
                 <Categories />
-                {loading && <ActivityIndicator size="large" color={colors.primary} style={tailwind`mt-2 mb-6`} />}
+                {loading && <ActivityIndicator size="large" color={colors.primary} style={tw`mt-2 mb-6`} />}
                 <RestaurantItem restaurantData={restaurantData} />
             </ScrollView>
         </Screen>

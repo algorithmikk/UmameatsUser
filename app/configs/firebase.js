@@ -1,18 +1,30 @@
-import firebase from "firebase"
+import {initializeApp} from 'firebase/app';
+import {getAuth, initializeAuth, getReactNativePersistence } from "firebase/auth";
+import { getFirestore } from 'firebase/firestore';
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC2lDR4Z65Xko-dd7QdM6TKiyXQ63QbvW4",
-    authDomain: "uber-eats-clone-ks.firebaseapp.com",
-    projectId: "uber-eats-clone-ks",
-    storageBucket: "uber-eats-clone-ks.appspot.com",
-    messagingSenderId: "281176967578",
-    appId: "1:281176967578:web:2571a2dcc6b781597bd223"
+    apiKey: "AIzaSyAog303VEpKp-l2LfgE0JTMO1oWC202zQo",
+    authDomain: "friendlyeats-5e84b.firebaseapp.com",
+    projectId: "friendlyeats-5e84b",
+    storageBucket: "friendlyeats-5e84b.appspot.com",
+    messagingSenderId: "845905714417",
+    appId: "1:845905714417:android:c1f0f09aa42eba16"
 };
 
-const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
+const app = initializeApp(firebaseConfig);
 
-const auth = app.auth()
-const db = firebase.firestore()
-const timestamp = firebase.firestore.FieldValue.serverTimestamp()
+//const auth = authFirebase;
+const db = getFirestore(app);;
+
+const timestamp = db.timestamp;
+
+//const auth = getAuth(app); 
+
+const auth = initializeAuth(app, {
+    persistence: getReactNativePersistence(ReactNativeAsyncStorage)
+  });
+
 
 export { auth, db, timestamp }

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, View } from 'react-native';
 import colors from '../configs/colors';
 import { fetchPublishableKey } from '../utils/helpers';
-import tailwind from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 
 const PaymentScreen = ({ children }) => {
 
@@ -26,7 +26,7 @@ const PaymentScreen = ({ children }) => {
     }, []);
     
     return loading ? (
-        <View style={tailwind`flex-1 bg-white items-center justify-center`}>
+        <View style={tw`flex-1 bg-white items-center justify-center`}>
             <ActivityIndicator size="large" color="#000" />
         </View>
     ) : (

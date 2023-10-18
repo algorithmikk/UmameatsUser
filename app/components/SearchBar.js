@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import tailwind from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -8,7 +8,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const SearchBar = ({ setCity, city }) => {
 
     return (
-        <View style={tailwind`flex-row mt-3 px-4 pb-3 border-b border-gray-100 border-b-2`}>
+        <View style={tw`flex-row mt-3 px-4 pb-3 border-b border-gray-100 border-b-2`}>
             <GooglePlacesAutocomplete
                 placeholder={city || "Search"}
                 nearbyPlacesAPI="GooglePlacesSearch"
@@ -42,14 +42,14 @@ const SearchBar = ({ setCity, city }) => {
                 }}
                 enablePoweredByContainer={false}
                 renderLeftButton={() => (
-                    <View style={tailwind`self-center ml-3`}>
+                    <View style={tw`self-center ml-3`}>
                         <Ionicons name="ios-location-sharp" size={24} color="#CCCCCC" />
                     </View>
                 )}
                 renderRightButton={() => (
-                    <TouchableOpacity style={tailwind`self-center ml-3 flex-row items-center bg-white py-2 px-3 rounded-full mr-3`}>
+                    <TouchableOpacity style={tw`self-center ml-3 flex-row items-center bg-white py-2 px-3 rounded-full mr-3`}>
                         <MaterialCommunityIcons name="clock-time-four" size={13} color="black" />
-                        <Text style={tailwind`ml-1`}>Search</Text>
+                        <Text style={tw`ml-1`}>Search</Text>
                     </TouchableOpacity>
                 )}
             />

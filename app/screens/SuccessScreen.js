@@ -4,7 +4,7 @@ import AppButton from '../components/AppButton'
 import Screen from '../components/Screen'
 import colors from '../configs/colors'
 import { useNavigation } from '@react-navigation/native';
-import tailwind from 'tailwind-react-native-classnames';
+import tw from 'twrnc';
 
 function SuccessScreen() {
     const navigation = useNavigation()
@@ -12,7 +12,7 @@ function SuccessScreen() {
     return (
         <Screen style={styles.container}>
             <View style={styles.content}>
-                <Image source={ require('../assets/images/blink.gif') } style={tailwind`w-72 h-72`} />
+                <Image source={ require('../assets/images/blink.gif') } style={tw`w-72 h-72`} />
                 <Text style={styles.title}>Congratulations!!!</Text>
                 <Text style={styles.text}>Your order have been taken successfully!</Text>
                 <View style={styles.buttons}>
