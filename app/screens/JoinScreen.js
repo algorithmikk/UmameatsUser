@@ -10,8 +10,8 @@ function JoinScreen({ navigation }) {
             <View style={styles.image}>
                 <Image style={styles.logo} source={require("../assets/logo.png")} />
                 <View style={styles.content}>
-                    <Text style={styles.title}>Uber Eats: Food Delivery</Text>
-                    <Text style={styles.subTitle}>Get food delivery to your doorstep from thousands of amazing local and national restaurants.</Text>
+                    <Text style={styles.title}>UmaMeats: Homemade food delivery</Text>
+                    <Text style={styles.subTitle}>Get homemade food delivery to your doorstep from thousands of amazing local chefs.</Text>
                     <AppButton title="Let's go" onPress={() => navigation.navigate("Signup")} />
                 </View>
             </View>

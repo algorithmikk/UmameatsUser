@@ -60,7 +60,7 @@ function SignupScreen({ navigation }) {
           <Image style={styles.logo} source={require("../assets/logo.png")} />
         </View>
         <Text style={styles.wellcomeTo}>
-          Join to Uber <Text style={styles.brand}>Eats</Text>
+          Join Umam <Text style={styles.brand}>Eats</Text>
         </Text>
         <View style={styles.form}>
           <AppForm
@@ -93,7 +93,7 @@ function SignupScreen({ navigation }) {
             onPress={() => navigation.navigate("UserLogin")}
             style={{ color: colors.primary }}
           >
-            Logn In
+            Log In Here
           </Text>
         </Text>
       </View>
